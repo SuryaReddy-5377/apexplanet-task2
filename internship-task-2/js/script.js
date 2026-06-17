@@ -49,6 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     showToast('Login successful! Welcome back! 🎉', 'success');
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
+                    
+                    // ✅ Clear form fields after successful login
+                    document.getElementById('loginEmail').value = '';
+                    document.getElementById('loginPassword').value = '';
+                    document.getElementById('loginEmail').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('loginPassword').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('rememberMe').checked = false;
+                    
                 }, 1500);
             }
         });
@@ -87,6 +95,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     showToast('Registration successful! Welcome to ApexPlanet! 🚀', 'success');
                     submitBtn.innerHTML = originalText;
                     submitBtn.disabled = false;
+                    
+                    // ✅ Clear form fields after successful registration
+                    document.getElementById('firstName').value = '';
+                    document.getElementById('lastName').value = '';
+                    document.getElementById('registerEmail').value = '';
+                    document.getElementById('registerPassword').value = '';
+                    document.getElementById('confirmPassword').value = '';
+                    document.getElementById('termsCheck').checked = false;
+                    
+                    document.getElementById('firstName').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('lastName').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('registerEmail').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('registerPassword').classList.remove('is-valid', 'is-invalid');
+                    document.getElementById('confirmPassword').classList.remove('is-valid', 'is-invalid');
+                    
+                    document.getElementById('passwordMatch').innerHTML = '';
+                    document.getElementById('passwordStrength').innerHTML = '';
+                    document.getElementById('emailStatus').innerHTML = '';
                     
                     setTimeout(() => {
                         window.location.href = 'index.html';
@@ -347,7 +373,6 @@ function isValidEmail(email) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
-        // Skip if href is just "#" or empty or invalid
         if (!href || href === '#' || href === '#0' || href === '#') {
             return;
         }
@@ -370,40 +395,3 @@ if (typeof AOS !== 'undefined') {
         duration: 800
     });
 }
-// Add this inside the register form submit event (after validation)
-registerForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if (validateRegisterForm()) {
-        // Get all form values
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('registerEmail').value;
-        const password = document.getElementById('registerPassword').value;
-        
-        // Create user object
-        const userData = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            password: password,
-            registeredAt: new Date().toLocaleString()
-        };
-        
-        // Show in console (for developers)
-        console.log('✅ New User Registered:', userData);
-        console.log('📧 Email:', email);
-        console.log('👤 Name:', firstName + ' ' + lastName);
-        console.log('📅 Registered at:', userData.registeredAt);
-        
-        // Store in localStorage (so you can see it later)
-        let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
-        users.push(userData);
-        localStorage.setItem('registeredUsers', JSON.stringify(users));
-        
-        // Show toast
-        showToast('Registration successful! Welcome to ApexPlanet! 🚀', 'success');
-        
-        // ... rest of your code
-    }
-});
