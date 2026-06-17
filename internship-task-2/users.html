@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users - ApexPlanet</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="brand-logo">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>ApexPlanet</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">
+                            <i class="fas fa-user-plus me-1"></i>Register
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="users.html">
+                            <i class="fas fa-users me-1"></i>Users
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Users Section -->
+    <section class="users-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card form-card animate-fade-in">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <div class="brand-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h2 class="fw-bold">Registered Users</h2>
+                                <p class="text-muted">All users who have registered</p>
+                            </div>
+
+                            <div id="userList">
+                                <!-- Users will be displayed here -->
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <a href="register.html" class="btn btn-primary">
+                                    <i class="fas fa-user-plus me-2"></i>Register New User
+                                </a>
+                                <button onclick="clearUsers()" class="btn btn-danger ms-2">
+                                    <i class="fas fa-trash me-2"></i>Clear All
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>ApexPlanet</span>
+                    </div>
+                    <p class="footer-text">Building the future of software development with innovation and excellence.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#helpModal">Help Center</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5>Newsletter</h5>
+                    <p class="footer-text">Subscribe for updates and opportunities.</p>
+                    <div class="newsletter-input">
+                        <input type="email" placeholder="Your email">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center footer-copyright">© 2026 ApexPlanet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Help Modal -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--primary-color), var(--light-green));">
+                    <h5 class="modal-title text-white">
+                        <i class="fas fa-headset me-2"></i>Help Center
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="help-icon mb-3">
+                        <i class="fas fa-phone-alt" style="font-size: 4rem; color: var(--light-green);"></i>
+                    </div>
+                    <h4 class="fw-bold">Need Help?</h4>
+                    <p class="text-muted">Contact our support team</p>
+                    <div class="contact-card p-4" style="background: var(--light-green-bg); border-radius: 16px;">
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                            <i class="fas fa-phone" style="color: var(--light-green); font-size: 1.5rem;"></i>
+                            <div>
+                                <h6 class="mb-0">Call us at</h6>
+                                <h4 class="fw-bold" style="color: var(--light-green);">+91 9796143143</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Load and display users
+        function loadUsers() {
+            const users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            const userList = document.getElementById('userList');
+            
+            if (users.length === 0) {
+                userList.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="fas fa-user-slash" style="font-size: 4rem; color: var(--text-muted);"></i>
+                        <h4 class="mt-3 text-muted">No users registered yet</h4>
+                        <p class="text-muted">Be the first one to register!</p>
+                        <a href="register.html" class="btn btn-primary mt-2">
+                            <i class="fas fa-user-plus me-2"></i>Register Now
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = `
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead style="background: linear-gradient(135deg, var(--primary-color), var(--light-green)); color: white;">
+                            <tr>
+                                <th>#</th>
+                                <th><i class="fas fa-user me-2"></i>Name</th>
+                                <th><i class="fas fa-envelope me-2"></i>Email</th>
+                                <th><i class="fas fa-calendar me-2"></i>Registered At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            users.forEach((user, index) => {
+                html += `
+                    <tr>
+                        <td><span class="badge" style="background: var(--light-green);">${index + 1}</span></td>
+                        <td><strong>${user.firstName} ${user.lastName}</strong></td>
+                        <td>${user.email}</td>
+                        <td>${user.registeredAt || 'Just now'}</td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3 text-muted">
+                    <i class="fas fa-users me-1"></i>Total Users: <strong>${users.length}</strong>
+                </div>
+            `;
+            
+            userList.innerHTML = html;
+        }
+        
+        // Clear all users
+        function clearUsers() {
+            if (confirm('Are you sure you want to delete all registered users?')) {
+                localStorage.removeItem('registeredUsers');
+                loadUsers();
+                showToast('All users cleared!', 'success');
+            }
+        }
+        
+        // Load users on page load
+        document.addEventListener('DOMContentLoaded', loadUsers);
+        
+        // Toast function
+        function showToast(message, type = 'success') {
+            const container = document.createElement('div');
+            container.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+            container.style.zIndex = '9999';
+            
+            const toast = document.createElement('div');
+            toast.className = `toast align-items-center text-white bg-${type} border-0 show`;
+            toast.innerHTML = `
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2"></i>
+                        ${message}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                </div>
+            `;
+            
+            container.appendChild(toast);
+            document.body.appendChild(container);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => container.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

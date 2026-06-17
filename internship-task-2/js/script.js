@@ -370,3 +370,40 @@ if (typeof AOS !== 'undefined') {
         duration: 800
     });
 }
+// Add this inside the register form submit event (after validation)
+registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (validateRegisterForm()) {
+        // Get all form values
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+        
+        // Create user object
+        const userData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            registeredAt: new Date().toLocaleString()
+        };
+        
+        // Show in console (for developers)
+        console.log('✅ New User Registered:', userData);
+        console.log('📧 Email:', email);
+        console.log('👤 Name:', firstName + ' ' + lastName);
+        console.log('📅 Registered at:', userData.registeredAt);
+        
+        // Store in localStorage (so you can see it later)
+        let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        users.push(userData);
+        localStorage.setItem('registeredUsers', JSON.stringify(users));
+        
+        // Show toast
+        showToast('Registration successful! Welcome to ApexPlanet! 🚀', 'success');
+        
+        // ... rest of your code
+    }
+});

@@ -197,7 +197,47 @@
             </div>
         </div>
     </section>
-
+    <!-- ===== HELP CENTER MODAL (Add this before footer) ===== -->
+    <div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--primary-color), var(--light-green));">
+                    <h5 class="modal-title text-white" id="helpModalLabel">
+                        <i class="fas fa-headset me-2"></i>
+                        Help Center
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="help-icon mb-3">
+                        <i class="fas fa-phone-alt" style="font-size: 4rem; color: var(--light-green);"></i>
+                    </div>
+                    <h4 class="fw-bold">Need Help?</h4>
+                    <p class="text-muted">Contact our support team for any assistance</p>
+                    <div class="contact-card p-4" style="background: var(--light-green-bg); border-radius: 16px;">
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                            <i class="fas fa-phone" style="color: var(--light-green); font-size: 1.5rem;"></i>
+                            <div>
+                                <h6 class="mb-0">Call us at</h6>
+                                <h4 class="fw-bold" style="color: var(--light-green);">+91 9796143143</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="text-muted mb-1">Or email us at</p>
+                        <a href="mailto:suryareddy5377@gmail.com" class="text-decoration-none fw-bold" style="color: var(--primary-color);">
+                            <i class="fas fa-envelope me-2"></i>suryareddy5377@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
  <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -223,8 +263,7 @@
             </div>
             <div class="col-lg-2 col-md-6">
                 <h5>Support</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Help Center</a></li>
+                <ul class="list-unstyled"><li><a href="#" data-bs-toggle="modal" data-bs-target="#helpModal">Help Center</a></li>
                     <li><a href="#">Privacy</a></li>
                 </ul>
             </div>

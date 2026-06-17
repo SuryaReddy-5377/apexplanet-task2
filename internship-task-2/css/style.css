@@ -1072,3 +1072,55 @@ p, span, div, label, small {
         gap: 15px;
     }
 }
+/* ===== Modal Dark Mode Fix ===== */
+.modal-content {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header .modal-title {
+    color: var(--text-primary) !important;
+}
+
+.modal-header .btn-close {
+    filter: var(--btn-close-filter);
+}
+
+.modal-body {
+    color: var(--text-secondary) !important;
+}
+
+.modal-body h6 {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.modal-body p {
+    color: var(--text-secondary) !important;
+    margin-bottom: 10px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+.modal-footer .btn-secondary {
+    background: var(--border-color);
+    color: var(--text-primary);
+    border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+    background: var(--text-secondary);
+    color: white;
+}
+
+[data-theme="dark"] .btn-close {
+    filter: invert(1) brightness(200%);
+}
